@@ -1,37 +1,33 @@
 function arrowGame() {
   const arrows = ["&larr;", "&uarr;", "&rarr;", "&darr;"];
-
-  const arrow = document.querySelector(".arrow-face");
-  const points = document.querySelector(".points");
-  const timer = document.querySelector(".timer");
-  const highscore = document.querySelector(".highscore");
-  const correct = document.querySelector(".correct")
-  const wrong = document.querySelector(".wrong")
   let time = 20;
-  let high = 0;
+  let count = 0;
   timer.innerHTML = `Time: ${time}`;
 
   function gameTimer() {
-    for (let i = 1; i < 21; i++) {
-      setTimeout(function() {
-        time--;
-        timer.innerHTML = `Time: ${time}`;
-        if (i === 20) {
-          arrow.style.display = "none";
-          points.style.display = "none";
-          timer.style.display = "none";
-          if (count > high) {
-            high = count;
-          }
-          highscore.innerHTML = `YOUR HIGHSCORE: </br> ${high}`;
-          highscore.style.display = "flex";
+    x = setInterval(function() {
+      time--;
+      timer.innerHTML = `Time: ${time}`;
+
+      if (time === 0) {
+        clearInterval(x);
+        arrow.style.display = "none";
+        points.style.display = "none";
+        timer.style.display = "none";
+        if (count > high) {
+          high = count;
         }
-      }, i * 1000);
-    }
+        console.log(high);
+        highscore.innerHTML = `SCORE: ${count} </br> HIGHSCORE: ${high}`;
+        highscore.style.display = "flex";
+      }
+    }, 1000);
   }
 
   arrow.style.display = "flex";
-  let count = 0;
+  points.style.display = "flex";
+  timer.style.display = "flex";
+  
   points.innerHTML = `Points: ${count}`;
 
   function setArrow() {
@@ -60,7 +56,7 @@ function arrowGame() {
     if (inputKey.innerHTML === arrow.innerHTML) {
       arrow.classList.add("correct");
       correct.currentTime = 0;
-      correct.play()
+      correct.play();
       count++;
       points.innerHTML = `Points: ${count}`;
       setTimeout(setArrow, 150);
