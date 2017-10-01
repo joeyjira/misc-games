@@ -1,0 +1,56 @@
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 800px;
+    font-size: 60px;
+    background: red;
+    opacity: 0.8;
+}
+
+.highscore {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 800px;
+    font-size: 60px;
+    background: red;
+    opacity: 0.8;
+}
+
+.start:hover {
+    background: #A70101;
+    cursor: pointer;
+}
+
+.arrow-face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 50%;
+    font-size: 120px;
+    display: none;
+}
+
