@@ -9,7 +9,8 @@ const wrong = document.querySelector(".wrong")
 let x;
 let high = 0;
 startButton.addEventListener('click', function() {
-    startButton.style.display = "none"
+    startButton.style.display = "none";
+    resetButton.style.display = "flex";
     arrowGame();
 })
 

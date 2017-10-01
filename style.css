@@ -62,3 +62,10 @@ body {
     color: red;
 }
 
+.reset {
+    display: none;
+}
+
+.reset:hover {
+    cursor: pointer;
+}
