@@ -5,6 +5,8 @@ function arrowGame() {
   const points = document.querySelector(".points");
   const timer = document.querySelector(".timer");
   const highscore = document.querySelector(".highscore");
+  const correct = document.querySelector(".correct")
+  const wrong = document.querySelector(".wrong")
   let time = 20;
   let high = 0;
   timer.innerHTML = `Time: ${time}`;
@@ -54,10 +56,14 @@ function arrowGame() {
         break;
     }
     if (inputKey.innerHTML === arrow.innerHTML) {
+      correct.currentTime = 0;
+      correct.play()
       count++;
       points.innerHTML = `Points: ${count}`;
       setArrow();
     } else {
+      wrong.currentTime = 0;
+      wrong.play();
       if (count > 0) {
         count--;
       }
