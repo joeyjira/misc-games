@@ -17,7 +17,6 @@ function arrowGame() {
         if (count > high) {
           high = count;
         }
-        console.log(high);
         highscore.innerHTML = `SCORE: ${count} </br> HIGHSCORE: ${high}`;
         highscore.style.display = "flex";
       }

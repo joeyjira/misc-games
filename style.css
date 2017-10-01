@@ -52,6 +52,7 @@ body {
     border-radius: 50%;
     font-size: 120px;
     display: none;
+    cursor: none;
 }
 
 .correct {
