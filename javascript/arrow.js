@@ -37,6 +37,8 @@ function arrowGame() {
   function setArrow() {
     const randNum = Math.floor(Math.random() * 4);
     arrow.innerHTML = arrows[randNum];
+    arrow.classList.remove("correct");
+    arrow.classList.remove("wrong");
   }
 
   window.addEventListener("keydown", e => {
@@ -56,18 +58,21 @@ function arrowGame() {
         break;
     }
     if (inputKey.innerHTML === arrow.innerHTML) {
+      arrow.classList.add("correct");
       correct.currentTime = 0;
       correct.play()
       count++;
       points.innerHTML = `Points: ${count}`;
-      setArrow();
+      setTimeout(setArrow, 150);
     } else {
+      arrow.classList.add("wrong");
       wrong.currentTime = 0;
       wrong.play();
       if (count > 0) {
         count--;
       }
       points.innerHTML = `Points: ${count}`;
+      setTimeout(setArrow, 150);
     }
   });
 

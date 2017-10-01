@@ -54,3 +54,11 @@ body {
     display: none;
 }
 
+.correct {
+    color: green;
+}
+
+.wrong {
+    color: red;
+}
+
